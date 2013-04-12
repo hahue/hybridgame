@@ -74,7 +74,7 @@
 			}
 			
 			// check & update player movement
-			updated = this.updateMovement();
+			this.updateMovement();
                  
 			// update animation
 			if (this.vel.x!=0 || this.vel.y!=0)

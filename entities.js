@@ -75,6 +75,9 @@
 			
 			// check & update player movement
 			this.updateMovement();
+			
+			// check for collision with sthg
+			var res = me.game.collide(this);
                  
 			// update animation
 			if (this.vel.x!=0 || this.vel.y!=0)

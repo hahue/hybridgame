@@ -41,7 +41,12 @@ var jsApp	=
 		// load everything & display a loading screen
 		me.state.change(me.state.LOADING);
 		
-		me.debug.renderHitBox = true;
+		me.debug.renderHitBox = false;
+		me.debug.renderCollisionMap = false;
+		me.debug.renderDirty = false;
+		me.debug.renderVelocity = false;
+		me.debug.renderVelocity = false;
+		me.sys.isMobile=true;		
 	},
 	
 	

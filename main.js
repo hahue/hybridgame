@@ -1,8 +1,9 @@
 
 // game ressources
 var g_ressources= [  {name: "tileset-platformer",	type:"image",	src: "data/tiles/tileset-platformer.png"},
+                     {name: "tileset2",	type:"image",	src: "data/tiles/tileset2.png"},
                      {name: "level02",               type: "tmx",	src: "data/tmx/test02.tmx"},
-					 {name: "level01",               type: "tmx",	src: "data/tmx/test01.tmx"},                     
+					 {name: "level01",               type: "tmx",	src: "data/tmx/level1.tmx"},                     
                      {name: "helmer",     		type:"image",	src: "data/sprite/helmer.png"}
                   ]; 
 
@@ -19,10 +20,9 @@ var jsApp	=
 		
 		---			*/
 	onload: function()
-	{
-      
+	{      		
 		// init the video
-		if (!me.video.init('jsapp', 320, 200, false, 1.0))
+		if (!me.video.init('jsapp', window.innerWidth*0.8 , window.innerHeight*0.60, false, 1.0))
 		{
 			alert("Kein HTML5 Support!");
 			return;
@@ -47,6 +47,7 @@ var jsApp	=
 		me.debug.renderVelocity = false;
 		me.debug.renderVelocity = false;
 		me.sys.isMobile=true;		
+				
 	},
 	
 	
@@ -84,7 +85,7 @@ var PlayScreen = me.ScreenObject.extend(
 	{	
       // stuff to reset on state change
       	// load a level
-		me.levelDirector.loadLevel("level02");
+		me.levelDirector.loadLevel("level01");
 	},
 	
 	
@@ -115,6 +116,25 @@ window.onReady(function()
 
 	jsApp.onload();
 });
+
+function resize_canvas(){
+/*    canvas = document.getElementById("jsapp");
+    
+    if (canvas.width  < window.innerWidth)
+    {
+        canvas.width  = window.innerWidth;
+    }
+
+    if (canvas.height < window.innerHeight)
+    {
+        canvas.height = window.innerHeight/2;
+    }
+
+    alert("width="+window.innerHeight);
+    
+    me.video.onresize(null);
+    */
+}
 
 function left()
 {

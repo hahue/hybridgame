@@ -3,6 +3,7 @@
 	<name>hybridgameGIT</name>
 	<comment></comment>
 	<projects>
+		<project>MelonJS2</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

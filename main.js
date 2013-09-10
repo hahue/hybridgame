@@ -3,8 +3,12 @@
 var g_ressources= [  {name: "tileset-platformer",	type:"image",	src: "data/tiles/tileset-platformer.png"},
                      {name: "tileset2",	type:"image",	src: "data/tiles/tileset2.png"},
                      {name: "level02",               type: "tmx",	src: "data/tmx/test02.tmx"},
-					 {name: "level01",               type: "tmx",	src: "data/tmx/level1.tmx"},                     
-                     {name: "helmer",     		type:"image",	src: "data/sprite/helmer.png"}
+				{name: "level01",               type: "tmx",	src: "data/tmx/level1.tmx"},                     
+                     {name: "helmer",     		type:"image",	src: "data/sprite/helmer.png"},
+			     {name: "spinning_coin_gold",  type:"image", src: "data/sprite/spinning_coin_gold.png"},
+				{name: "tileset3",  type:"image", src: "data/tiles/tileset3.png"},
+				{name: "tileset4",  type:"image", src: "data/tiles/tileset4.png"},
+				{name: "28205",  type:"image", src: "data/tiles/28205.png"}
                   ]; 
 
 var isTouchSupported = 'ontouchstart' in window;
@@ -63,6 +67,7 @@ var jsApp	=
       
 		// add our player entity in the entity pool
 		me.entityPool.add("myPlayer", PlayerEntity);
+		me.entityPool.add("CoinEntity", CoinEntity);
 			
 		// enable the keyboard
 		me.input.bindKey(me.input.KEY.LEFT,		"left");
@@ -105,14 +110,14 @@ var PlayScreen = me.ScreenObject.extend(
 //bootstrap :)
 window.onReady(function() 
 {
-	document.getElementById("left").addEventListener(startEvent,left,false);
-	document.getElementById("left").addEventListener(endEvent,left_stop,false);
-
-	document.getElementById("jump").addEventListener(startEvent,jump,false);
-	document.getElementById("jump").addEventListener(endEvent,jump_stop,false);
-
-	document.getElementById("right").addEventListener(startEvent,right,false);
-	document.getElementById("right").addEventListener(endEvent,right_stop,false);
+//	document.getElementById("left").addEventListener(startEvent,left,false);
+//	document.getElementById("left").addEventListener(endEvent,left_stop,false);
+//
+//	document.getElementById("jump").addEventListener(startEvent,jump,false);
+//	document.getElementById("jump").addEventListener(endEvent,jump_stop,false);
+//
+//	document.getElementById("right").addEventListener(startEvent,right,false);
+//	document.getElementById("right").addEventListener(endEvent,right_stop,false);
 
 	jsApp.onload();
 });

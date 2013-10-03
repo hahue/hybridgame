@@ -3,7 +3,7 @@
 	<name>hybridgameGIT</name>
 	<comment></comment>
 	<projects>
-		<project>MelonJS2</project>
+		<project>melonJS</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
@@ -15,4 +15,17 @@
 	<natures>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>src</name>
+			<type>2</type>
+			<location>/home/hahue/git/melonJS/src</location>
+		</link>
+	</linkedResources>
+	<variableList>
+		<variable>
+			<name>MelonJS_source</name>
+			<value>file:/home/hahue/git/melonJS/src</value>
+		</variable>
+	</variableList>
 </projectDescription>

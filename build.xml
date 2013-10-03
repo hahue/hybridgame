@@ -1,0 +1,12 @@
+<project name="Build Melon JS" default="build">
+	<target name="build">
+		<antcall target="buildMelon"/>
+		<copy file="/home/hahue/git/melonJS/build/melonJS-0.9.9.js" 
+			tofile="/home/hahue/git/hybridgame/lib/melonjs.js"/>
+	</target>
+	<target name="buildMelon">
+		<exec executable="/bin/bash">
+			<arg value="/home/hahue/git/hybridgame/build.sh"/>
+		</exec>
+	</target>
+</project>

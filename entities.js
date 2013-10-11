@@ -1,4 +1,5 @@
 
+var playerJump=false;
 /* -----
 
 	game entities
@@ -12,7 +13,15 @@
 	/*************************/
 	var PlayerEntity = me.ObjectEntity.extend(
 	{	
-      
+		plJump: false,
+		
+		getPlJump:function() {
+			return this.plJump;
+		},
+		
+		setPlJump:function(value) {
+			this.plJump=value;
+		},
       /* -----
 
 			constructor
@@ -40,37 +49,37 @@
 			update the player pos
 			
 		  ------			*/
-		update : function ()
-		{
-				
-			if (me.input.isKeyPressed('left'))
-			{
+		update : function () {
+//			var myDiv1 = Document.getElementById('text1');
+			if (this.vel.y!=0) {
+				console.log("update pos.x="+this.pos.x+" pos.y="+this.pos.y+" vel.x="+this.vel.x+" vel.y="+this.vel.y);
+			}
+			
+			if (me.input.isKeyPressed('left')) {
 				// flip the sprite on horizontal axis
 				this.flipX(true);
 				// update the entity velocity
 				this.vel.x -= this.accel.x * me.timer.tick;
-			}
-			else if (me.input.isKeyPressed('right'))
-			{
+			
+			} else if (me.input.isKeyPressed('right')) {
 				// unflip the sprite
 				this.flipX(false);
 				// update the entity velocity
 				this.vel.x += this.accel.x * me.timer.tick;
-			}
-			else
-			{
+			
+			} else {
 				this.vel.x = 0;
-			}
-			if (me.input.isKeyPressed('jump'))
-			{	
-				if (!this.jumping && !this.falling) 
-				{
-					// set current vel to the maximum defined value
-					// gravity will then do the rest
-					this.vel.y = -this.maxVel.y * me.timer.tick;
-					// set the jumping flag
-					this.jumping = true;
-				}
+				
+			} if (me.input.isKeyPressed('jump')) {	
+//				if (!this.jumping && !this.falling)
+//				{
+//					// set current vel to the maximum defined value
+//					// gravity will then do the rest
+//					this.vel.y = -this.maxVel.y * me.timer.tick;
+//					// set the jumping flag
+//					this.jumping = true;
+//				}
+				this.doJump();
 			}
 			
 			// check & update player movement
@@ -78,10 +87,14 @@
 			
 			// check for collision with sthg
 			var res = me.game.collide(this);
+			
+			if (this.plJump==true) {
+				this.forceJump();
+				this.plJump=false;
+			}
                  
 			// update animation
-			if (this.vel.x!=0 || this.vel.y!=0)
-			{
+			if (this.vel.x!=0 || this.vel.y!=0) {
 				// update objet animation
 				this.parent(this);
 				return true;
@@ -106,11 +119,19 @@
 	    // an object is touched by something (here collected)
 	    onCollision: function() {
 	        // do something when collected
-	 
+	    	PlayerEntity.setPlJump(true);
 	        // make sure it cannot be collected "again"
 	        this.collidable = false;
 	        // remove it
 	        me.game.remove(this);
 	    }
+	    
+//		update : function () {
+//			this.vel.x += this.accel.x * me.timer.tick;
+//			this.updateMovement();
+//
+//			return true;
+//		}
+		
 	 
 	});	

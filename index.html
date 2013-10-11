@@ -2,19 +2,26 @@
 <html>
 	<head>
 		<title>Drei</title>
+		<meta name='viewport' content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0' />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
 	</head>
-	<body bgcolor="black" onresize="resize_canvas()">
-		<div id="info" style="width: 320px;">
+	<script type="text/javascript" src="lib/melonjs.js"></script>
+	<script type="text/javascript" src="entities.js"></script>
+	<script type="text/javascript" src="main.js"></script>
+<!-- 
+<style type='text/css'>
+div {position:absolute;left:0px;top:0px;width:100%;height:100%;background-color:#00ff00;}
+</style>
+ -->
+	<body bgcolor="black">
+		<div id="info">
 			<div id="jsapp">
 				<font color="#FFFFFF", style="position: absolute; font-size: 10px; font-family: Courier New">
-					
+					<div id="text1">Hallo Test1</div>				
 				</font>
-				<script type="text/javascript" src="lib/melonjs.js"></script>
-				<script type="text/javascript" src="entities.js"></script>
-				<script type="text/javascript" src="main.js"></script>
 			</div>
 		</div>
-		<table width="300" border="0">
+		<table width="100%" border="0">
 		  <tr>
 			<td><div id="left" style="background-color:#CCCCCC;width:80px;height:80px;padding:10px;">Left</div> </td>
 			<td><div id="jump" style="background-color:#CCCCCC;width:80px;height:80px;padding:10px;">Jump</div></td>

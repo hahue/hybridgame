@@ -54,7 +54,8 @@ var jsApp = {
 		// init the video
 		// if (!me.video.init('jsapp', window.innerWidth*0.8 ,
 		// window.innerHeight*0.60, false, 1.0)) {
-		if (!me.video.init('jsapp', screen.width * window.devicePixelRatio * 0.8, screen.width * window.devicePixelRatio * 0.5, false, 1.0)) {
+		//alert(screen.width+" "+window.devicePixelRatio+" "+(screen.width * window.devicePixelRatio));
+		if (!me.video.init('jsapp', screen.width * window.devicePixelRatio * 0.9, screen.height * window.devicePixelRatio * 0.5, false,1.0,true)) {
 
 			alert("Kein HTML5 Support!");
 			return;
@@ -173,7 +174,18 @@ window.onReady(function() {
 	document.getElementById("right").addEventListener(endEvent, right_stop, false);
 
 	jsApp.onload();
-	// resize_canvas();
+	
+//	   var canvas = document.getElementById('jsapp');
+//	   var viewportWidth = window.innerWidth;
+//	   var viewportHeight = window.innerHeight;
+//	   var canvasWidth = viewportWidth * 0.8;
+//	   var canvasHeight = canvasWidth / 2;
+//
+//	   canvas.style.position = "absolute";
+//	   canvas.setAttribute("width", canvasWidth);
+//	   canvas.setAttribute("height", canvasHeight);
+//	   canvas.style.top = (viewportHeight - canvasHeight) / 2 + "px";
+//	   canvas.style.left = (viewportWidth - canvasWidth) / 2 + "px";
 
 });
 

@@ -1,5 +1,4 @@
 
-var playerJump=false;
 /* -----
 
 	game entities
@@ -13,23 +12,13 @@ var playerJump=false;
 	/*************************/
 	var PlayerEntity = me.ObjectEntity.extend(
 	{	
-		plJump: false,
-		
-		getPlJump:function() {
-			return this.plJump;
-		},
-		
-		setPlJump:function(value) {
-			this.plJump=value;
-		},
       /* -----
 
 			constructor
 			
 		  ------			*/
 		
-		init:function (x, y, settings)
-		{
+		init:function (x, y, settings) {
 			// call the constructor
 			this.parent(x, y , settings);
 			
@@ -50,6 +39,7 @@ var playerJump=false;
 			
 		  ------			*/
 		update : function () {
+			
 //			var myDiv1 = Document.getElementById('text1');
 			if (this.vel.y!=0) {
 				console.log("update pos.x="+this.pos.x+" pos.y="+this.pos.y+" vel.x="+this.vel.x+" vel.y="+this.vel.y);
@@ -88,9 +78,9 @@ var playerJump=false;
 			// check for collision with sthg
 			var res = me.game.collide(this);
 			
-			if (this.plJump==true) {
+			if (res && (res.obj.name=='coinentity')) {
+				console.log("Flip a coin!");
 				this.forceJump();
-				this.plJump=false;
 			}
                  
 			// update animation
@@ -119,7 +109,7 @@ var playerJump=false;
 	    // an object is touched by something (here collected)
 	    onCollision: function() {
 	        // do something when collected
-	    	PlayerEntity.setPlJump(true);
+
 	        // make sure it cannot be collected "again"
 	        this.collidable = false;
 	        // remove it

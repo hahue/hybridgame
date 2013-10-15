@@ -61,14 +61,7 @@
 				this.vel.x = 0;
 				
 			} if (me.input.isKeyPressed('jump')) {	
-//				if (!this.jumping && !this.falling)
-//				{
-//					// set current vel to the maximum defined value
-//					// gravity will then do the rest
-//					this.vel.y = -this.maxVel.y * me.timer.tick;
-//					// set the jumping flag
-//					this.jumping = true;
-//				}
+
 				this.doJump();
 			}
 			
@@ -86,7 +79,7 @@
 			// update animation
 			if (this.vel.x!=0 || this.vel.y!=0) {
 				// update objet animation
-				this.parent(this);
+				this.parent(this); // call parent update function (ObjectEntity)
 				return true;
 			}
 			

@@ -68,6 +68,7 @@
 			// check & update player movement
 			this.updateMovement();
 			
+			
 			// check for collision with sthg
 			var res = me.game.collide(this);
 			

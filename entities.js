@@ -45,6 +45,10 @@
 				console.log("update pos.x="+this.pos.x+" pos.y="+this.pos.y+" vel.x="+this.vel.x+" vel.y="+this.vel.y);
 			}
 			
+			if (this.pos.y<0) {
+				me.levelDirector.reloadLevel();
+			}
+			
 			if (me.input.isKeyPressed('left')) {
 				// flip the sprite on horizontal axis
 				this.flipX(true);

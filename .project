@@ -21,11 +21,10 @@
 			<type>2</type>
 			<location>/home/hahue/git/melonJS/src</location>
 		</link>
+		<link>
+			<name>srcMelon</name>
+			<type>2</type>
+			<location>/home/hahue/git/melonJS/src</location>
+		</link>
 	</linkedResources>
-	<variableList>
-		<variable>
-			<name>MelonJS_source</name>
-			<value>file:/home/hahue/git/melonJS/src</value>
-		</variable>
-	</variableList>
 </projectDescription>

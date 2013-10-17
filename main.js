@@ -14,6 +14,10 @@ var jsApp = {
 		type : "tmx" ,
 		src : "data/tmx/test02.tmx"
 	} , {
+		name : "level04" ,
+		type : "tmx" ,
+		src : "data/tmx/test04.tmx"
+	} , {
 		name : "level01" ,
 		type : "tmx" ,
 		src : "data/tmx/level1.tmx"
@@ -117,7 +121,7 @@ var PlayScreen = me.ScreenObject.extend({
 		// stuff to reset on state change
 		// load a level
 
-		me.levelDirector.loadLevel("level01");
+		me.levelDirector.loadLevel("level04");
 	} ,
 
 	/*
